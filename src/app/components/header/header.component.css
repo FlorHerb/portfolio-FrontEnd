@@ -1,0 +1,17 @@
+@media(min-width: 991px) {
+    .navbar {
+        height: 56px;
+    }
+}
+
+.navbar-custom {
+    background-color: #7a3f4a;
+}
+
+.navbar-brand {
+    font-size: 15px;
+}
+
+img {
+    width: 110px;
+}

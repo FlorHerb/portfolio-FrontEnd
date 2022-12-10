@@ -1,0 +1,13 @@
+div {
+    padding-top: 25px;
+    background-color:#7eb7b5;;   
+}
+footer{
+    padding-top: 10px;
+   font-family: "Otro";
+   font-size:15px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    box-shadow: 2px -2px 5px #999;
+}

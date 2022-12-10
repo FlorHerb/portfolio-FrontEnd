@@ -1,0 +1,43 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+@font-face {
+  font-family: "Titulos";
+  src: url(assets/font/The_Goldsmith_Vintage.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Otro";
+  src: url(assets/font/VTCGoblinHand.ttf) format("truetype");
+}
+
+
+
+
+h1 {
+  font-family: "Titulos";
+  font-size: 55px;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 10px;
+}
+
+
+.color1 {
+  color: #559e9e;
+}
+
+.color2 {
+  color: #7eb7b5;
+}
+
+.color3 {
+  color: #401b32;
+}
+
+.color4 {
+  color: #7a3f4a;
+}
+
+.color5 {
+  color: #af8c82;
+}
