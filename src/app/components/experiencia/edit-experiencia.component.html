@@ -1,0 +1,44 @@
+<div class="container" *ngIf="experiencia">
+
+    <div class="row">
+        <div>
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="nombreE">Nombre</label>
+                    <input type="text" class="form-control" id="nombreE" name="nombreE"
+                        [(ngModel)]="experiencia.nombreE" required />
+                </div>
+                <div class="form-group">
+                    <label for="descripcionExp">Descripcion</label>
+                    <input type="text" class="form-control" id="descripcionE" name="descripcionE"
+                        [(ngModel)]="experiencia.descripcionE" required />
+                </div>
+                <div class="form-group">
+                    <label for="img">Imagen</label>
+                    <input type="file" class="form-control" id="img" name="img"
+                        [(ngModel)]="experiencia.img" (change)="uploadImage($event)" accept=".jpg, .jpeg, .png" />
+                </div>
+                <div class="form-group">
+                    <label for="fecha_inicio">Fecha Inicio</label>
+                    <input type="date" class="form-control" id="fecha_inicio" name="fecha_inicio"
+                        [(ngModel)]="experiencia.fecha_inicio" required />
+                </div>
+                <div class="form-group">
+                    <label for="fecha_fin">Fecha Finalización</label>
+                    <input type="date" class="form-control" id="fecha_fin" name="fecha_fin"
+                        [(ngModel)]="experiencia.fecha_fin" required />
+                </div>
+                <div class="form-group">
+                    <label for="empleador">Empleador</label>
+                    <input type="text" class="form-control" id="empleador" name="empleador"
+                        [(ngModel)]="experiencia.empleador" required />
+                </div>
+                <button class="btn btn-light" type="submit">
+                    Actualizar Experiencia
+                </button>
+
+            </form>
+        </div>
+    </div>
+
+</div>

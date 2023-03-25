@@ -53,7 +53,12 @@
             </ul>
           </li>
           <li>
-            <button class="btn btn-dark" ><i class="bi bi-box-arrow-in-right"></i> Login</button>
+            <button class="btn btn-dark" (click)="iniciar_sesion()" *ngIf="!isLogged"><i class="bi bi-box-arrow-in-right" ></i> Ingresar</button>
+            
+          </li>
+          <li>
+            <button class="btn btn-dark" (click)="onLogOut()" *ngIf="isLogged"><i class="bi bi-box-arrow-in-left" ></i> Cerrar Sesión</button>
+
           </li>
 
         </ul>

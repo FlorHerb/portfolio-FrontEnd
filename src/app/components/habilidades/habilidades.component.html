@@ -1,14 +1,30 @@
-<div  id="habilidades">
-   
-    <div class="row justify-content-center" >
+<div id="habilidades">
+
+    <div class="row justify-content-center">
         <h1>Hard and Soft Skills</h1>
-        <h2>Lenguajes</h2>
-        <div class="col-4 col-md-3">
-            <circle-progress [percent]="70" [radius]="70" [showUnits]="false" [outerStrokeWidth]="9"
-                [innerStrokeWidth]="5" [outerStrokeColor]="'#401b32'" [innerStrokeColor]="'#7a3f4a'" [animation]="true"
-                [animationDuration]="300" [responsive]="true" [title]='"Javascript"' [subtitle]="''"></circle-progress>
+        <div>
+            <button class="btn btn-dark" routerLink="/nuevaskill" type="button" *ngIf="isLogged">Agregar</button>
         </div>
-        <div class="col-4 col-md-3">
+        <div class="col-4 col-md-3" *ngFor="let Skill of skill">
+            <circle-progress [percent]="(Skill.porcentaje)" [radius]="70" [showUnits]="false" [outerStrokeWidth]="9"
+                [innerStrokeWidth]="5" [outerStrokeColor]="'#401b32'" [innerStrokeColor]="'#7a3f4a'" [animation]="true"
+                [animationDuration]="300" [responsive]="true" [title]="(Skill.nombre)"
+                [subtitle]="''"></circle-progress>
+                  
+
+            <div>   
+                <button type="button" class="btn btn-lg" routerLink="/editskill/{{Skill.id}}" *ngIf="isLogged"><i class="bi bi-pencil-square"></i></button>
+                <button type="button" class="btn btn-lg" (click)="delete(Skill.id)" *ngIf="isLogged"><i class="bi bi-trash3-fill"></i></button>    
+            </div>
+
+        </div>
+        
+    </div>
+</div>
+
+
+
+<!--      <div class="col-4 col-md-3">
             <circle-progress [percent]="85" [radius]="70" [showUnits]="false" [outerStrokeWidth]="9"
                 [innerStrokeWidth]="5" [outerStrokeColor]="'#401b32'" [innerStrokeColor]="'#7a3f4a'" [animation]="true"
                 [animationDuration]="300" [responsive]="true" [title]='"HTML"' [subtitle]="''"></circle-progress>
@@ -74,5 +90,5 @@
                 [innerStrokeWidth]="5" [outerStrokeColor]="'#401b32'" [innerStrokeColor]="'#7a3f4a'" [animation]="true"
                 [animationDuration]="300" [responsive]="true" [title]='"Rápido aprendizaje"' [subtitle]="''" [titleFontSize]="'15'"></circle-progress>
         </div>
-    </div>
-</div>
+    </div> 
+</div>-->
