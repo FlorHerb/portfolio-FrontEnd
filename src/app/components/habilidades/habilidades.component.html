@@ -1,23 +1,23 @@
-<div id="habilidades">
+<div class="container col-8" id="habilidades">
 
-    <div class="row justify-content-center">
-        <h1>Hard and Soft Skills</h1>
+    <div class="row pb-5">
+        <h1 class="col">Habilidades</h1>
         <div>
-            <button class="btn btn-dark" routerLink="/nuevaskill" type="button" *ngIf="isLogged">Agregar</button>
+            <button class="btn btn-dark mb-4" routerLink="/nuevaskill" type="button" *ngIf="isLogged">Agregar</button>
         </div>
-        <div class="col-4 col-md-3" *ngFor="let Skill of skill">
+    
+        <div class=" col-lg-4 col-md-4 col-sm-8" *ngFor="let Skill of skill">
+            <div class="circulo">
             <circle-progress [percent]="(Skill.porcentaje)" [radius]="70" [showUnits]="false" [outerStrokeWidth]="9"
                 [innerStrokeWidth]="5" [outerStrokeColor]="'#401b32'" [innerStrokeColor]="'#7a3f4a'" [animation]="true"
-                [animationDuration]="300" [responsive]="true" [title]="(Skill.nombre)"
+                [animationDuration]="300" [responsive]="true" [title]="(Skill.nombre)" [titleColor]="'#faebd7'"
                 [subtitle]="''"></circle-progress>
-                  
-
             <div>   
                 <button type="button" class="btn btn-lg" routerLink="/editskill/{{Skill.id}}" *ngIf="isLogged"><i class="bi bi-pencil-square"></i></button>
                 <button type="button" class="btn btn-lg" (click)="delete(Skill.id)" *ngIf="isLogged"><i class="bi bi-trash3-fill"></i></button>    
             </div>
-
         </div>
+    </div>
         
     </div>
 </div>

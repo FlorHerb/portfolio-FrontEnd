@@ -4,8 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { SocialComponent } from './components/social/social.component';
-import { BannerComponent } from './components/banner/banner.component';
 import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { EducacionComponent } from './components/educacion/educacion.component';
@@ -28,13 +26,20 @@ import { EditEducacionComponent } from './components/educacion/edit-educacion.co
 import { NewEducacionComponent } from './components/educacion/new-educacion.component';
 import { EditProyectoComponent } from './components/proyectos/edit-proyecto.component';
 import { NewProyectoComponent } from './components/proyectos/new-proyecto.component';
+import { EditAcercaDeComponent } from './components/acerca-de/edit-acerca-de.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
+import { BannerComponent } from './components/banner/banner.component';
+import { ConntactoComponent } from './components/conntacto/conntacto.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { EmailService } from './service/email.service';
+ 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    SocialComponent,
-    BannerComponent,
     AcercaDeComponent,
     ExperienciaComponent,
     EducacionComponent,
@@ -50,7 +55,10 @@ import { NewProyectoComponent } from './components/proyectos/new-proyecto.compon
     EditEducacionComponent,
     NewEducacionComponent,
     EditProyectoComponent,
-    NewProyectoComponent 
+    NewProyectoComponent,
+    EditAcercaDeComponent,
+    BannerComponent,
+    ConntactoComponent, 
    
   ],
   imports: [
@@ -58,9 +66,12 @@ import { NewProyectoComponent } from './components/proyectos/new-proyecto.compon
     AppRoutingModule,
     NgCircleProgressModule.forRoot({}),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage())
   ],
-  providers: [interceptorProvider],
+  providers: [interceptorProvider, EmailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

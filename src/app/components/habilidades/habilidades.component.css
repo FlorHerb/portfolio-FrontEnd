@@ -1,16 +1,11 @@
-div{
- 
+div {
     text-align: center;
 }
-h2{
-    padding-top: 50px;
-    padding-bottom: 20px;
-    font-family: "Titulos";
+
+h1 {
+    font-size: 4rem;
 }
-h1{
-    font-size: 55px;
-}
-div {
-    background-color:#7eb7b5;;
-    
+
+.circulo{
+    margin-bottom: 4rem;
 }

@@ -1,11 +1,12 @@
 @media(min-width: 991px) {
     .navbar {
-        height: 56px;
+        height: 4rem;
     }
 }
 
+
 .navbar-custom {
-    background-color: #7a3f4a;
+    background-color: #301217;
 }
 
 .navbar-brand {
@@ -15,3 +16,15 @@
 img {
     width: 110px;
 }
+
+nav{
+    position: sticky;
+}
+
+a{
+    font-size: 1.1rem;
+}
+.modal-content{
+    background-color: #301217;
+}
+

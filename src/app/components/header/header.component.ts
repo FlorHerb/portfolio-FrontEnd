@@ -19,6 +19,8 @@ export class HeaderComponent implements OnInit{
     }else{
       this.isLogged=false;
     }
+
+    
   }
 
   onLogOut():void{

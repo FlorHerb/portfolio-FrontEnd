@@ -1,104 +1,43 @@
-<div class="row" id="experiencia">
-    <h1>Experiencia Laboral</h1>
-    <div class="col-2">
-        <button class="btn btn-dark" routerLink="/nuevaexp" type="button" *ngIf="isLogged">Agregar</button>
-    </div>
+<div class="container">
+    <div class="row" id="experiencia">
+        <h1>Experiencia Laboral</h1>
+        <div class="col-12 text-center pb-5">
+            <button class="btn btn-dark" routerLink="/nuevaexp" type="button" *ngIf="isLogged">Agregar</button>
+        </div>
 
-    <div class="col-11">
-         <table class="table">
-            <tbody>
-                <tr *ngFor="let Experiencia of experiencia">
-                    <td>{{Experiencia.nombreE}}</td>
-                    <td>{{Experiencia.descripcionE}}</td>
-                    <td><button type="button" class="btn" routerLink="/editexp/{{Experiencia.id}}" *ngIf="isLogged"><i class="bi bi-pencil-square"></i></button></td>
-                    <td><button type="button" class="btn" (click)="eliminarExperiencia(Experiencia.id)" *ngIf="isLogged"><i class="bi bi-trash3-fill"></i></button></td>
+    
+        <table class="col-9 rounded mb-2" *ngFor="let Experiencia of experiencia">
+            <tbody >
+                <tr>
+                    <td rowspan="3" class="img">
+                        <img src={{Experiencia.img}} class="logo-experiencia" />
+                    </td>
+                    <td>
+                        <h5 class="mb-1 mt-2">{{Experiencia.nombreE}}</h5>
+                    </td>
+                    <td class="end mt-2">
+                        <button type="button" class="btn btn-lg" routerLink="/editexp/{{Experiencia.id}}"
+                            *ngIf="isLogged"><i class="bi bi-pencil-square"></i></button>
+                        <button type="button" class="btn btn-lg" (click)="eliminarExperiencia(Experiencia.id)"
+                            *ngIf="isLogged"><i class="bi bi-trash3-fill"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>{{Experiencia.descripcionE}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pb-2">
+                        <small>{{Experiencia.empleador}}</small>
+                    </td>
+                    <td class="end pe-3">
+                        <small>{{Experiencia.fecha_inicio}} - {{Experiencia.fecha_fin}}</small>
+                    </td>
+
                 </tr>
             </tbody>
         </table>
-    </div>
-
-   
-<div class="col-11">
-    <div class="list-group">
-        <div class="list-group-item" *ngFor="let Experiencia of experiencia">
-         
-            <div class="row">
-                
-                <div class="col-1 d-flex align-items-center">
-                    <img src="../../../assets/niñera.png" class="col img-fluid logo-experiencia" />
-                </div>     
-                <div class="col-9">
-                    <h5 class="mb-1">{{Experiencia.nombreE}}</h5> 
-                    <p>{{Experiencia.descripcionE}}</p>
-                   
-                </div>
-                <div class="col-2 d-flex justify-content-end align-items-start">   
-                    <button type="button" class="btn btn-lg" routerLink="/editexp/{{Experiencia.id}}" *ngIf="isLogged"><i class="bi bi-pencil-square"></i></button>
-                    <button type="button" class="btn btn-lg" (click)="eliminarExperiencia(Experiencia.id)" *ngIf="isLogged"><i class="bi bi-trash3-fill"></i></button>
-                   
-                </div>
-                <div class="col-1"></div>
-                <div class="col-11 d-flex justify-content-between">
-                    <small>Empleador particular - Paula Cian</small> 
-                    <small>feb 2022 - Actualidad</small>
-                </div>
-                
-                
-                
-            </div>
-        </div>
 
     </div>
-</div>
-
-
-
-
-
-
-
-<!--     <div class="col-11">
-        <div class="list-group">
-            <div class="list-group-item">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Cuidado de Personas - Niñera</h5>
-                    <small>feb 2022 - Actualidad</small>
-                </div>
-                <div class="row">
-                    <img src="../../../assets/niñera.png" class="col, logo-experiencia" />
-                    <div class="col">
-                        <p>Cuidado de un niño.</p>
-                        <small>Empleador particular - Paula Cian</small>
-                    </div>
-                </div>
-            </div>
-            <div class="list-group-item">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Cuidado de Personas - Niñera</h5>
-                    <small>nov 2019 - feb 2022</small>
-                </div>
-                <div class="row d-flex align-items-center">
-                    <img src="../../../assets/niñera.png" class="col, logo-experiencia" />
-                    <div class="col">
-                        <p>Cuidado de una niña.</p>
-                        <small>Empleador particular - Marcela Auch</small>
-                    </div>
-                </div>
-            </div>
-            <div class="list-group-item">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Atención al público</h5>
-                    <small>jul 2018 - ene 2020</small>
-                </div>
-                <div class="row">
-                    <img src="../../../assets/vergel-logo.jpg" class="col, logo-experiencia" />
-                    <div class="col">
-                        <p>Atención a las mesas y preparación de pedidos de la cafetería.</p>
-                        <small>Cafetería "El Vergel"</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div> -->
 </div>

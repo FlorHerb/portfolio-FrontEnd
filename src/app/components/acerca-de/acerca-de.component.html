@@ -1,17 +1,20 @@
-<div class="row">
-    <div class="col-6">
-        <img src="../../../assets/dibujo-perfil.png" class="img-fluid" id="dibujo-perfil" />
-    </div>
-    <div class="col-12">
-        <h2 id="nombre">Florencia Herber</h2>
-        <h5>Full Stack Developer Jr</h5>
-        <h6>Entre Ríos, Argentina</h6>
-    </div>
+<div class="container" *ngIf="persona">
+     <div class="d-flex flex-column align-items-center">
+        <div>
+            <img src={{persona.img}} class="img-fluid" id="dibujo-perfil" />
+        </div>
+        <div>
+            <h1 id="nombre">{{persona.nombre}} {{persona.apellido}}</h1>
+            <h5 class="text-center">{{persona.ocupacion}}</h5>
+            <h6 class="text-center">{{persona.ubicacion}}</h6>
 
-    <div class="col-10" id="acercaDe">
-        <span>
+        </div>
+
+        <button class="btn btn-dark mt-3" routerLink="/editacercade/1" type="button" *ngIf="isLogged">Editar</button>
+
+        <div id="acercaDe">
             <h1>Acerca de mi</h1>
-           <!--<h2>{{persona.nombre}}</h2>--> 
+
             <p>Desde que tengo memoria adoro crear cosas, creo que no hay nada mejor que la sensación de traer algo
                 nuevo al mundo.</p>
             <p>
@@ -24,9 +27,8 @@
                 todo lo que vengo aprendiendo y en donde pueda seguir mejorando y creciendo.
 
             </p>
+        </div>
 
+    </div> 
 
-        </span>
-
-    </div>
 </div>

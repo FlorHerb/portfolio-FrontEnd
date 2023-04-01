@@ -3,20 +3,26 @@
 }
 
 .logo-experiencia {
-    width: 80px;
-    border-radius: 100%;
-}
-
-h5 {
-    padding-bottom: 10px;
-}
-
-div {
-  
-  background-color:#050505;
-  background-color:#7eb7b5; 
+    width: 4rem;
+    height: 4rem;
+    border-radius: 20%;
 }
 
 h1 {
-    font-size: 55px;
+    font-size: 4rem;
+}
+.img{
+    text-align: center;
+    width: 7rem;
+}
+
+.end{
+    text-align: end;
+}
+table{
+    background-color:  #05050581 !important;
+}
+
+table:hover{
+    background-color: #050505ab !important;
 }

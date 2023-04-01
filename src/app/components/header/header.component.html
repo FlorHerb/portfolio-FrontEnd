@@ -1,5 +1,5 @@
-<div>
-  <nav class="navbar fixed-top navbar-expand-lg navbar-custom navbar-dark">
+
+  <nav class="navbar navbar-expand-lg navbar-custom navbar-dark sticky-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
         <img src="../../../assets/APLogo-20-20.png" alt="logo AP">
@@ -18,23 +18,18 @@
             <a class="nav-link" href="#acercaDe">Acerca de</a>
           </li>
           <li>
+            <a class="nav-link" href="#experiencia">Experiencia</a>
+          </li>
+          <li>
             <a class="nav-link" href="#educación">Educación</a>
           </li>
           <li>
             <a class="nav-link" href="#habilidades">Habilidades</a>
           </li>
+          
           <li>
-            <a class="nav-link" href="#experiencia">Experiencia</a>
+            <a class="nav-link" href="#proyectos">Proyectos</a>
           </li>
-
-          <li class="nav-item dropdown">
-            <a href="#proyectos" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> Proyectos<b
-                class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li>
-                <a class="dropdown-item" href="#proyecto1">Portfolio Argentina Programa</a>
-              </li>
-            </ul>
 
           <li class="nav-item dropdown">
             <a href="#contacto" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> Contacto <b
@@ -49,6 +44,9 @@
               </li>
               <li>
                 <a class="dropdown-item" href="https://www.instagram.com/florenciaxmagali/" target="_blank"><i class="bi bi-instagram"></i> Instagram</a>
+              </li>
+              <li>
+                <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalContacto"> <span class="bi bi-envelope"></span> Contáctame </a>
               </li>
             </ul>
           </li>
@@ -65,4 +63,33 @@
       </div>
     </div>
   </nav>
-</div>
+
+
+
+
+<div class="modal fade" id="modalContacto" tabindex="-1" aria-labelledby="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">X</button>
+       <app-conntacto></app-conntacto>
+      </div>
+    </div>
+  </div>
+</div> 
+
+<!-- <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+  <div class="md-form mb-2">
+      <label for="name" class="">Tu nombre:</label>
+      <input type="text" id="name" name="name" class="form-control">
+  </div>
+  <div class="md-form mb-2">
+      <label for="email" class="">Tu email</label>
+      <input type="text" id="email" name="email" class="form-control">
+  </div>
+  <div class="md-form">
+      <label for="message">Mensaje:</label>
+      <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+  </div>
+
+</form> -->

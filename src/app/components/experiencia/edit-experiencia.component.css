@@ -1,0 +1,13 @@
+#imagen {
+  display: none;
+}
+
+img {
+  max-width: 30vw;
+  max-height: 50vh;
+}
+
+label{
+  color: antiquewhite;
+}
+

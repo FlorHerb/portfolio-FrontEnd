@@ -1,86 +1,44 @@
-<div class="row" id="educación">
-    <h1>Educacion</h1>
-    <div class="col-11">
-        <div class="list-group">
-            <div class="list-group-item">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Tecnicatura Universitaria en Programación</h5>
-                    <small>2021 - 2023</small>
-                </div>
-                <div class="row">
-                    <img src="../../../assets/logo-utn.png" class="col, logo" />
-                    <div class="col">
-                        <p>UTN - Facultad Regional Paraná</p>
-                        <small>Realizando las Prácticas Supervisadas</small>
-                    </div>
-                </div>
-            </div>
-            <div class="list-group-item">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Argentina Programa #SéProgramar</h5>
-                    <small>2021 - 2023</small>
-                </div>
-                <div class="row">
-                    <img src="../../../assets/logo-ap.png" class="col, logo" />
-                    <div class="col">
-                        <p>Ministerio de Desarrollo Productivo</p>
-                        <small>Primera etapa del programa finalizada. Actualmente cursando la segunda etapa #YoProgramo</small>
-                    </div>
-                </div>
-            </div>
-            <div class="list-group-item">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">WorkShop Videojuegos</h5>
-                    <small>2022</small>
-                </div>
-                <div class="row">
-                    <img src="../../../assets/logo-utn.png" class="col, logo" />
-                    <div class="col">
-                        <p>UTN - Facultad Regional Buenos Aires</p>
-                        <small>Curso sobre la realización de videojuegos. Fundamentos y tecnología de Construct 3</small>
-                    </div>
-                </div>
-            </div>
-            <div class="list-group-item">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Tecnicatura en Pintura</h5>
-                    <small>2019</small>
-                </div>
-                <div class="row">
-                    <img src="../../../assets/Uader-logo.jpg" class="col, logo" />
-                    <div class="col">
-                        <p>UADER - Facultad de Humanidades, Artes y Ciencias Sociales</p>
-                        <small>Actualmente a una materia de obtener el título</small>
-                    </div>
-                </div>
-            </div>
-            <div class="list-group-item">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Licenciatura en Artes Visuales</h5>
-                    <small>2017</small>
-                </div>
-                <div class="row">
-                    <img src="../../../assets/Uader-logo.jpg" class="col, logo" />
-                    <div class="col">
-                        <p>UADER - Facultad de Humanidades, Artes y Ciencias Sociales</p>
-                        <small>Actualmente en el quinto año</small>
-                    </div>
-                </div>
+    <div class="container">
+        <div class="row" id="educacion">
+            <h1>Educacion</h1>
+            <div class="col-12 text-center pb-5">
+                <button class="btn btn-dark" routerLink="/nuevaedu" type="button" *ngIf="isLogged">Agregar</button>
             </div>
 
-            <div class="list-group-item">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Bachiller con orientación en Ciencias Naturales</h5>
-                    <small>2010 - 2016</small>
-                </div>
-                <div class="row">
-                    <img src="../../../assets/Logo-IELA.jpg" class="col, logo" />
-                    <div class="col">
-                        <p>Colegio Privado "Martín Lutero"</p>
-                        <small>Título secundario</small>
-                    </div>
-                </div>
-            </div>
+
+            <table class="col-9 rounded mb-2" *ngFor="let Educacion of educacion">
+                <tbody>
+                    <tr>
+                        <td rowspan="3" class="img">
+                            <img src={{Educacion.img}} class="logo" />
+                        </td>
+                        <td>
+                            <h5 class="mb-1 mt-2">{{Educacion.nombreE}}</h5>
+                        </td>
+                        <td class="end mt-2">
+                            <button type="button" class="btn btn-lg" routerLink="/editedu/{{Educacion.id}}"
+                                *ngIf="isLogged"><i class="bi bi-pencil-square"></i></button>
+                            <button type="button" class="btn btn-lg" (click)="eliminarEducacion(Educacion.id)"
+                                *ngIf="isLogged"><i class="bi bi-trash3-fill"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>{{Educacion.descripcionE}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="pb-2">
+                            <small>{{Educacion.institucion}}</small>
+                        </td>
+                        <td class="end pe-3">
+                            <small>{{Educacion.fecha_inicio}} - {{Educacion.fecha_fin}}</small>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+
         </div>
     </div>
-</div>
+   

@@ -1,0 +1,42 @@
+<div class="container pers" *ngIf="persona">
+        <div class="d-flex justify-content-center pt-5">
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm" class="d-flex flex-column justify-content-center">
+                <div class="form-group pb-2">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre"
+                        [(ngModel)]="persona.nombre" required />
+                </div>
+                <div class="form-group pb-2">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" class="form-control" id="apellido" name="apellido"
+                        [(ngModel)]="persona.apellido" required />
+                </div>
+                <div class="form-group pb-2">
+                    <label for="img">Imagen</label>
+                    <input type="file" class="form-control" id="img" name="img"
+                         (change)="uploadImage($event)" accept=".jpg, .jpeg, .png" />
+                </div>
+                <div class="form-group  pb-2">
+                    <label for="ocupacion">Ocupación</label>
+                    <input type="text" class="form-control" id="ocupacion" name="ocupacion"
+                        [(ngModel)]="persona.ocupacion" required />
+                </div>
+                <div class="form-group  pb-2">
+                    <label for="ubicacion">Ubicación</label>
+                    <input type="text" class="form-control" id="ubicacion" name="ubicacion"
+                        [(ngModel)]="persona.ubicacion" required />
+                </div>
+
+                <div class="imagen pb-3 align-self-center">
+                    <img [src]="imagenSrc" alt="imagen cargada" id="img"  *ngIf="persona" />
+                </div>
+
+                <button class="btn btn-dark mb-5" type="submit">
+                    Actualizar Persona
+                </button>
+
+            </form>
+        </div>
+   
+
+</div>

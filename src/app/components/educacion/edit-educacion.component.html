@@ -1,1 +1,45 @@
-<p>edit-educacion works!</p>
+<div class="container educ" *ngIf="educacion">
+
+        <div class="d-flex justify-content-center mt-5">
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm" class="d-flex flex-column justify-content-center">
+                <div class="form-group pb-3">
+                    <label for="nombreE">Nombre:</label>
+                    <input type="text" class="form-control" id="nombreE" name="nombreE" [(ngModel)]="educacion.nombreE"
+                        required />
+                </div>
+                <div class="form-group pb-3">
+                    <label for="descripcionE">Descripción:</label>
+                    <input type="text" class="form-control" id="descripcionE" name="descripcionE"
+                        [(ngModel)]="educacion.descripcionE" required />
+                </div>
+                 <div class="form-group pb-3">
+                    <label for="img">Imagen:</label>
+                    <input type="file" class="form-control" id="img" name="img"
+                     (change)="uploadImage($event)" accept=".jpg, .jpeg, .png" />
+                </div> 
+                <div class="form-group pb-3">
+                    <label for="fecha_inicio">Fecha Inicio:</label>
+                    <input type="text" class="form-control" id="fecha_inicio" name="fecha_inicio"
+                        [(ngModel)]="educacion.fecha_inicio" required />
+                </div>
+                <div class="form-group pb-3">
+                    <label for="fecha_fin">Fecha Finalización:</label>
+                    <input type="text" class="form-control" id="fecha_fin" name="fecha_fin"
+                        [(ngModel)]="educacion.fecha_fin" required />
+                </div>
+                <div class="form-group pb-3">
+                    <label for="institucion">institución:</label>
+                    <input type="text" class="form-control" id="institucion" name="institucion"
+                        [(ngModel)]="educacion.institucion" required />
+                </div>
+
+                 <div class="imagen pb-3 align-self-center"id="imagen">
+                    <img [src]="imagenSrc" alt="imagen cargada" />
+                </div> 
+                <button class="btn btn-dark mb-5" type="submit">
+                    Actualizar Educación
+                </button>
+
+            </form>
+        </div>
+    </div>

@@ -10,7 +10,18 @@
   src: url(assets/font/VTCGoblinHand.ttf) format("truetype");
 }
 
+@font-face {
+  font-family: 'Anonymous Pro';
+  src: url(https://fonts.gstatic.com/s/anonymouspro/v21/rP2Bp2a15UIB7Un-bOeISG3pHls29Q.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
+}
 
 
 h1 {
@@ -19,8 +30,33 @@ h1 {
   text-align: center;
   padding-top: 50px;
   padding-bottom: 10px;
-  
+  color: #af8c82;
+
 }
+
+h2,
+h3,
+p,
+h5,
+h6,
+small {
+  color: whitesmoke;
+}
+
+body {
+/*    background-image: url(./assets/fondo.jpg);
+  background-repeat: no-repeat;
+  background-size:fill;  */
+  background-color: #130207 !important;
+  background: rgb(48,18,23);
+background: linear-gradient(180deg, rgba(48,18,23,1) 23%, rgba(212,95,95,1) 59%, rgba(48,18,23,1) 98%);
+
+}
+
+.bi-pencil-square, .bi-trash3-fill{
+  color: antiquewhite !important;
+}
+
 
 
 .color1 {

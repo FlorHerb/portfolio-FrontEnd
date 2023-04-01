@@ -9,9 +9,9 @@ import { NuevoUsuario } from '../model/nuevo-usuario.model';
   providedIn: 'root'
 })
 export class AuthService {
-  authURL = 'http://localhost:8080/auth/';
+  //authURL = 'http://localhost:8080/auth/';
+  authURL = 'https://backend-portfolio-3o0v.onrender.com/auth/';
 
-  //URL = environment.URL + 'auth/';
 
   constructor(private httpClient: HttpClient) { }
 

@@ -1,22 +1,20 @@
-<div class="container" *ngIf="skill">
+<div class="container skill" *ngIf="skill">
+    <div class="d-flex justify-content-center mt-5 ">
+        <form (ngSubmit)="onUpdate()" novalidate #f="ngForm" class="d-flex flex-column gap-3">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombreE" name="nombre" [(ngModel)]="skill.nombre"
+                    required />
+            </div>
+            <div class="form-group">
+                <label for="porcentaje">Porcentaje:</label>
+                <input type="text" class="form-control" id="porcentaje" name="porcentaje" [(ngModel)]="skill.porcentaje"
+                    required />
+            </div>
+            <button class="btn btn-dark" type="submit">
+                Actualizar
+            </button>
+        </form>
 
-    <div class="row">
-        <div>
-            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
-                <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" id="nombreE" name="nombre" [(ngModel)]="skill.nombre" required />
-                </div>
-                <div class="form-group">
-                    <label for="porcentaje">Porcentaje</label>
-                    <input type="text" class="form-control" id="porcentaje" name="porcentaje" [(ngModel)]="skill.porcentaje" required />
-                </div>
-                <button class="btn btn-light" type="submit"> 
-                    Actualizar
-                </button>
-
-
-            </form>
-        </div>
     </div>
 </div>
